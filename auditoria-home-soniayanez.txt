@@ -1,0 +1,161 @@
+============================================================
+AUDITORIA DE CONTENIDO - HOME soniayanez.com
+Analisis de Marketing y Contenido
+============================================================
+
+## PROBLEMA 1: ACA se repite 7 VECES
+
+ACA aparece en:
+1. Hero - "Creadora del Sistema ACA"
+2. El nuevo paradigma - "Diagnostico ACA"
+3. Perfil institucional - "Creadora Sistema ACA"
+4. Marcos propios - "ACA - Autoridad y Credibilidad Algoritmica"
+5. Seccion dedicada "Framework ACA" (seccion entera)
+6. Servicios - "Consultoria Estrategica ACA"
+7. Footer - "Ecosistema ACA"
+
+SOLUCION: Mencionar ACA maximo 2-3 veces:
+- 1 vez en el hero (como credencial, no como protagonista)
+- 1 vez en la seccion de servicios (como herramienta)
+- 1 vez en el footer (como parte del ecosistema)
+ELIMINAR la seccion dedicada "Framework ACA" (es redundante con "Marcos propios")
+
+
+## PROBLEMA 2: Demasiados botones (19+ CTAs)
+
+Botones actuales:
+- Hero: 2 botones
+- El nuevo paradigma: 3 botones
+- Perfil: 2 botones
+- Testimonios: 1 boton
+- CTA central: 2 botones
+- Reporte: 2 botones
+- Framework ACA: 2 botones
+- Servicios: 5+ botones
+TOTAL: 19+ botones
+
+Cuando todo es importante, nada es importante.
+
+SOLUCION: Maximo 6-8 CTAs en toda la pagina:
+- Hero: 1 boton principal
+- Servicios: 1 boton por servicio (3 total)
+- Reporte: 1 boton de descarga
+- Contacto final: 1 boton
+TOTAL: 6 botones claros
+
+
+## PROBLEMA 3: El blog no aparece en el Home
+
+El blog solo esta en el menu de navegacion.
+Si Sonia publica contenido de valor (columnas en El Universo, articulos),
+deberia haber una seccion en el Home que muestre los ultimos 3 posts.
+
+SOLUCION: Agregar seccion "Ultimas publicaciones" o
+"Lo ultimo del blog" con 3 cards de posts recientes.
+
+
+## PROBLEMA 4: El reporte de tendencias no destaca
+
+El "Reporte Ejecutivo Tendencias RRPP 2026" existe pero
+compite con demasiadas secciones. Deberia ser una seccion
+prominente con diseno diferenciado.
+
+SOLUCION: Hacer del reporte una seccion hero secundaria
+con fondo diferenciado, icono de descarga grande y
+formulario inline.
+
+
+============================================================
+PROPUESTA DE ESTRUCTURA DEL HOME (NUEVA)
+============================================================
+
+ORDEN DE SECCIONES (de arriba a abajo):
+
+1. HERO
+   - Tagline: ESPECIALISTA EN REPUTACION DIGITAL E IA
+   - H1: Que la IA hable bien de ti no es suerte. Es estrategia.
+   - Subtitulo: 28 anos... (credenciales cortas)
+   - 1 CTA: "Solicitar informacion"
+   - Estadisticas: 28+ anos | 15+ paises | 24+ anos catedratica
+
+2. SERVICIOS (fusionar "nuevo paradigma" + "servicios")
+   - H2: Tres formas de trabajar conmigo
+   - 3 cards: Diagnostico | Formacion | Conferencias
+   - 1 boton por card
+   - SIN mencionar ACA en cada card, solo "Diagnostico de reputacion algoritmica"
+
+3. REPORTE DE TENDENCIAS (DESTACADO)
+   - Fondo diferenciado (gradiente purpura o cyan)
+   - H2: Descarga gratis: Tendencias RRPP 2026
+   - Bullet points: 10 tendencias | 9 frameworks | Roadmap 90 dias
+   - 1 CTA grande: "Descargar reporte gratis"
+   - (Si hay reportaje adicional, agregar segundo recurso aqui)
+
+4. SOBRE MI (version corta)
+   - H2: Sonia Yanez Blum
+   - Foto + bio de 3 lineas
+   - Mencion de ACA, RICFE, RRPP 6.0 como credenciales (1 sola vez)
+   - 1 CTA: "Ver perfil completo"
+
+5. MARCOS Y METODOLOGIAS (version simplificada)
+   - H2: Metodologias propias
+   - 4 cards iconicas: ACA | RICFE | RRPP 6.0 | HACERP
+   - Sin botones, solo informativo
+
+6. TESTIMONIOS
+   - H2: Lo que dicen lideres de comunicacion
+   - 3 testimonios
+   - Sin boton (o 1 link discreto a LinkedIn)
+
+7. BLOG / PUBLICACIONES
+   - H2: Ultimas publicaciones
+   - 3 cards con los posts mas recientes
+   - 1 CTA: "Ver todas las publicaciones"
+
+8. CTA FINAL + CONTACTO
+   - H2: Hablemos de tu reputacion
+   - Texto corto
+   - 1 CTA: "Agendar una consulta"
+   - Email: hola@soniayanez.com
+
+9. FOOTER (simplificado)
+   - Logo + redes + navegacion + legal
+   - Quitar "Ecosistema ACA" (es demasiado)
+
+
+============================================================
+SECCIONES A ELIMINAR O FUSIONAR
+============================================================
+
+ELIMINAR:
+- "Framework ACA" (seccion dedicada) → redundante
+- "Llamada a accion central" → redundante con hero y CTA final
+- Botones duplicados de "Solicitar informacion" (aparece 4 veces)
+- "Conoce tu ACA-Score" del hero (nadie sabe que es al llegar)
+
+FUSIONAR:
+- "El nuevo paradigma" + "Servicios" → 1 sola seccion de servicios
+- "Perfil institucional" + "Sobre la autora" → 1 seccion corta
+
+MOVER:
+- "Gobernanza de Reputacion Algoritmica" → dentro de la seccion
+  de marcos/metodologias, con explicacion
+- Reporte de tendencias → subir mas arriba, posicion 3
+
+
+============================================================
+RESUMEN DE CAMBIOS EN ELEMENTOR
+============================================================
+
+PAGINA ACTUAL: 9 secciones + footer (sobrecargada)
+PAGINA PROPUESTA: 8 secciones + footer (clara y enfocada)
+
+BOTONES ACTUALES: 19+
+BOTONES PROPUESTOS: 7
+
+MENCIONES DE ACA ACTUALES: 7
+MENCIONES DE ACA PROPUESTAS: 3
+
+NUEVO: Seccion de blog con ultimos 3 posts
+NUEVO: Reporte de tendencias como seccion destacada
+NUEVO: Seccion para reportaje descargable
