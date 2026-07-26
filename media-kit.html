@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Kit &middot; Sonia Y&aacute;nez Blum &middot; Kit de Prensa</title>
+    <meta name="description" content="Kit de prensa oficial de Sonia Yánez Blum. Biografía, fotos oficiales, temas de expertise, apariciones en medios y contacto para prensa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #06080F;
+            --bg-card: #0E1220;
+            --bg-card-hover: #141A2E;
+            --border: rgba(124,58,237,0.15);
+            --p: #7C3AED;
+            --p-light: #A78BFA;
+            --p-glow: rgba(124,58,237,0.25);
+            --cyan: #4be4ff;
+            --t1: #F8FAFC;
+            --t2: #CBD5E1;
+            --t3: #94A3B8;
+            --radius: 16px;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--t2); line-height:1.75; }
+        h1,h2,h3 { font-family:'DM Serif Display',serif; color:var(--t1); line-height:1.3; }
+        a { color:var(--cyan); text-decoration:none; transition:opacity .2s; }
+        a:hover { opacity:.8; }
+        img { max-width:100%; height:auto; display:block; }
+        .container { max-width:960px; margin:0 auto; padding:0 1.5rem; }
+
+        /* Header */
+        .header { border-bottom:1px solid var(--border); padding:1rem 0; }
+        .header-inner { display:flex; align-items:center; justify-content:space-between; }
+        .header .logo { color:var(--t1); font-family:'DM Serif Display',serif; font-size:1.1rem; }
+        .header nav { display:flex; gap:1.5rem; font-size:.88rem; }
+        .header nav a { color:var(--t3); }
+        .header nav a:hover { color:var(--t1); }
+
+        /* Hero */
+        .hero { padding:4rem 0 3rem; text-align:center; }
+        .hero .badge { display:inline-block; background:var(--p-glow); color:var(--p-light); padding:.4rem 1.2rem; border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1.5rem; border:1px solid var(--border); }
+        .hero h1 { font-size:clamp(2rem,4vw,3rem); margin-bottom:1rem; }
+        .hero .subtitle { font-size:1.05rem; max-width:640px; margin:0 auto 2rem; }
+
+        /* Sections */
+        section { padding:3rem 0; }
+        section + section { border-top:1px solid var(--border); }
+        .section-label { font-size:.75rem; text-transform:uppercase; letter-spacing:.14em; color:var(--p-light); margin-bottom:.75rem; font-weight:600; }
+        h2 { font-size:1.6rem; margin-bottom:1.5rem; }
+        h3 { font-size:1.15rem; margin-bottom:.75rem; color:var(--t1); }
+
+        /* Bio */
+        .bio-grid { display:grid; gap:2rem; align-items:start; }
+        @media(min-width:640px) { .bio-grid { grid-template-columns:240px 1fr; } }
+        .bio-photo { border-radius:var(--radius); overflow:hidden; border:2px solid var(--border); }
+        .bio-versions { margin-top:2rem; }
+        .bio-version { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin-bottom:1rem; }
+        .bio-version summary { cursor:pointer; font-weight:600; color:var(--t1); font-size:.95rem; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+        .bio-version summary::after { content:'+'; font-size:1.2rem; color:var(--p-light); }
+        .bio-version[open] summary::after { content:'-'; }
+        .bio-version p { margin-top:1rem; font-size:.93rem; }
+
+        /* Cards grid */
+        .cards { display:grid; gap:1rem; }
+        @media(min-width:640px) { .cards { grid-template-columns:repeat(2,1fr); } }
+        @media(min-width:800px) { .cards-3 { grid-template-columns:repeat(3,1fr); } }
+        .card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; transition:background .2s; }
+        .card:hover { background:var(--bg-card-hover); }
+        .card .icon { font-size:1.5rem; margin-bottom:.75rem; }
+        .card h3 { font-size:1rem; }
+        .card p { font-size:.88rem; color:var(--t3); }
+
+        /* Frameworks */
+        .fw-name { color:var(--cyan); font-weight:700; }
+
+        /* Media list */
+        .media-list { list-style:none; }
+        .media-item { padding:1rem 0; border-bottom:1px solid rgba(255,255,255,.05); display:flex; gap:1rem; align-items:baseline; }
+        .media-item:last-child { border-bottom:none; }
+        .media-outlet { font-weight:600; color:var(--t1); min-width:140px; flex-shrink:0; font-size:.9rem; }
+        .media-topic { font-size:.88rem; color:var(--t3); }
+        .media-type { display:inline-block; background:var(--p-glow); color:var(--p-light); padding:.15rem .6rem; border-radius:999px; font-size:.7rem; font-weight:600; text-transform:uppercase; margin-left:.5rem; flex-shrink:0; }
+
+        /* Photos */
+        .photos-grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+        .photo-card { border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); position:relative; }
+        .photo-card img { aspect-ratio:1; object-fit:cover; }
+        .photo-label { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,.85)); padding:.75rem; font-size:.8rem; color:var(--t2); }
+
+        /* Contact CTA */
+        .cta-box { background:linear-gradient(135deg,var(--p) 0%,#4c1d95 100%); border-radius:var(--radius); padding:2.5rem; text-align:center; }
+        .cta-box h2 { color:#fff; }
+        .cta-box p { color:rgba(255,255,255,.8); max-width:500px; margin:0 auto 1.5rem; }
+        .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.8rem; border-radius:999px; font-weight:600; font-size:.95rem; transition:all .2s; border:none; cursor:pointer; }
+        .btn-white { background:#fff; color:var(--p); }
+        .btn-white:hover { transform:translateY(-2px); box-shadow:0 8px 25px rgba(0,0,0,.3); opacity:1; }
+        .btn-outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.3); margin-left:.75rem; }
+        .btn-outline:hover { background:rgba(255,255,255,.1); opacity:1; }
+
+        /* Data table */
+        .data-table { width:100%; border-collapse:collapse; font-size:.9rem; }
+        .data-table td { padding:.6rem 0; border-bottom:1px solid rgba(255,255,255,.05); }
+        .data-table td:first-child { color:var(--t3); width:180px; font-size:.85rem; }
+        .data-table td:last-child { color:var(--t1); }
+
+        /* Footer */
+        footer { border-top:1px solid var(--border); padding:2rem 0; text-align:center; font-size:.8rem; color:var(--t3); }
+
+        /* Download button */
+        .download-row { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem; }
+
+        /* Responsive */
+        @media(max-width:639px) {
+            .media-item { flex-direction:column; gap:.25rem; }
+            .media-outlet { min-width:auto; }
+            .header nav { display:none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo">Sonia Y&aacute;nez Blum</div>
+        <nav>
+            <a href="https://soniayanez.com/">Inicio</a>
+            <a href="https://soniayanez.com/acerca-de/">Acerca de</a>
+            <a href="https://soniayanez.com/servicios/">Servicios</a>
+            <a href="https://soniayanez.com/prensa/">Prensa</a>
+            <a href="https://soniayanez.com/contacto/">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <span class="badge">Kit de Prensa Oficial</span>
+        <h1>Media Kit</h1>
+        <p class="subtitle">Recursos oficiales para medios de comunicaci&oacute;n, organizadores de eventos y aliados estrat&eacute;gicos. Todo lo que necesitas en un solo lugar.</p>
+    </div>
+</section>
+
+<!-- BIOGRAFÍA -->
+<section>
+    <div class="container">
+        <p class="section-label">Biograf&iacute;a oficial</p>
+        <div class="bio-grid">
+            <div class="bio-photo">
+                <img src="https://soniayanez.com/wp-content/uploads/2025/09/Sonia-Yanez-web-rrpp.png" alt="Sonia Yánez Blum - Foto oficial">
+            </div>
+            <div>
+                <h2>Sonia Y&aacute;nez Blum</h2>
+                <p>Comunicadora estrat&eacute;gica y experta internacional en relaciones p&uacute;blicas, reputaci&oacute;n digital e inteligencia artificial aplicada a la comunicaci&oacute;n, con m&aacute;s de <strong>28 a&ntilde;os de trayectoria profesional</strong> y <strong>24 a&ntilde;os como catedr&aacute;tica universitaria</strong>.</p>
+                <p style="margin-top:.75rem;">Creadora de los frameworks <span class="fw-name">RICFE&reg;</span>, <span class="fw-name">ACA&trade;</span>, <span class="fw-name">RRPP 6.0</span> y <span class="fw-name">HACERP&reg;</span>. Fundadora de <strong>Blum Digital PR</strong> y la <strong>Academia de Relaciones P&uacute;blicas</strong>. Columnista en <strong>Diario El Universo</strong> (Ecuador). Conferencista en m&aacute;s de 15 pa&iacute;ses.</p>
+            </div>
+        </div>
+
+        <div class="bio-versions">
+            <details class="bio-version">
+                <summary>Bio corta (50 palabras) &mdash; para redes y presentaciones</summary>
+                <p>Sonia Y&aacute;nez Blum es comunicadora estrat&eacute;gica con 28 a&ntilde;os de experiencia en RR.PP., reputaci&oacute;n digital e IA aplicada a la comunicaci&oacute;n. Creadora de RICFE&reg; y ACA&trade;. Columnista en El Universo, conferencista internacional y fundadora de Blum Digital PR. Con base en Europa y proyectos en Latinoam&eacute;rica.</p>
+            </details>
+            <details class="bio-version">
+                <summary>Bio media (100 palabras) &mdash; para eventos y notas de prensa</summary>
+                <p>Sonia Y&aacute;nez Blum es comunicadora estrat&eacute;gica y consultora internacional especializada en relaciones p&uacute;blicas, reputaci&oacute;n digital e inteligencia artificial aplicada a la comunicaci&oacute;n, con m&aacute;s de 28 a&ntilde;os de trayectoria. Ha sido catedr&aacute;tica universitaria durante 24 a&ntilde;os y conferencista en m&aacute;s de 15 pa&iacute;ses.</p>
+                <p>Es creadora de los marcos estrat&eacute;gicos RICFE&reg; (prompting profesional), ACA&trade; (Autoridad y Credibilidad Algor&iacute;tmica) y RRPP 6.0 (relaciones p&uacute;blicas en la era de la IA). Fundadora de Blum Digital PR y la Academia de Relaciones P&uacute;blicas. Columnista en Diario El Universo. Su trabajo integra la comunicaci&oacute;n tradicional con la innovaci&oacute;n digital desde una perspectiva &eacute;tica y humana.</p>
+            </details>
+            <details class="bio-version">
+                <summary>Bio extendida (200+ palabras) &mdash; para publicaciones y editoriales</summary>
+                <p>Sonia Y&aacute;nez Blum es especialista en reputaci&oacute;n digital, comunicaci&oacute;n estrat&eacute;gica e inteligencia artificial aplicada a la construcci&oacute;n de confianza. Suma m&aacute;s de 28 a&ntilde;os de experiencia en relaciones p&uacute;blicas, acompa&ntilde;ando a organizaciones y l&iacute;deres en Ecuador, M&eacute;xico, Espa&ntilde;a, Austria, Colombia y Argentina.</p>
+                <p>Es creadora del marco ACA&trade; (Autoridad y Credibilidad Algor&iacute;tmica), de la f&oacute;rmula de prompting RICFE&reg;, del sistema educativo HACERP&reg; y del modelo RRPP 6.0. Es fundadora de Blum Digital PR y de la Academia de Relaciones P&uacute;blicas, y ha impulsado la Marat&oacute;n de Relaciones P&uacute;blicas, un espacio internacional para actualizar la profesi&oacute;n en clave digital y &eacute;tica.</p>
+                <p>Durante 24 a&ntilde;os ha ejercido como catedr&aacute;tica universitaria en instituciones de Ecuador, Chile, Nicaragua y Espa&ntilde;a. Es columnista en Diario El Universo y ha sido conferencista y docente en m&aacute;s de 15 pa&iacute;ses.</p>
+                <p>Su trabajo ha sido reconocido por integrar la comunicaci&oacute;n tradicional con la innovaci&oacute;n digital, siempre desde una perspectiva &eacute;tica y humana. Ha sido citada y entrevistada en medios como El Universo, Primicias, Ecuavisa, TC Televisi&oacute;n, Teleamazonas, Canal Uno y m&uacute;ltiples podcasts y plataformas digitales.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- DATOS CLAVE -->
+<section>
+    <div class="container">
+        <p class="section-label">Datos clave</p>
+        <h2>Ficha profesional</h2>
+        <table class="data-table">
+            <tr><td>Nombre completo</td><td>Sonia Y&aacute;nez Blum</td></tr>
+            <tr><td>Especialidad</td><td>Reputaci&oacute;n digital, IA aplicada a comunicaci&oacute;n, RR.PP. estrat&eacute;gicas</td></tr>
+            <tr><td>Experiencia</td><td>28+ a&ntilde;os en comunicaci&oacute;n &middot; 24 a&ntilde;os docencia universitaria</td></tr>
+            <tr><td>Base</td><td>Europa (Austria) &middot; Proyectos en Latinoam&eacute;rica</td></tr>
+            <tr><td>Origen</td><td>Guayaquil, Ecuador</td></tr>
+            <tr><td>Idiomas</td><td>Espa&ntilde;ol &middot; Ingl&eacute;s</td></tr>
+            <tr><td>Empresa</td><td>Blum Digital PR</td></tr>
+            <tr><td>Columna editorial</td><td>Diario El Universo (Ecuador)</td></tr>
+            <tr><td>Podcast</td><td>Podcast de las RRPP (Spotify)</td></tr>
+            <tr><td>Pa&iacute;ses como speaker</td><td>15+ pa&iacute;ses</td></tr>
+            <tr><td>Email prensa</td><td><a href="mailto:hola@soniayanez.com">hola@soniayanez.com</a></td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section>
+    <div class="container">
+        <p class="section-label">Metodolog&iacute;as propias</p>
+        <h2>Frameworks creados por Sonia Y&aacute;nez Blum</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">&#9881;</div>
+                <h3><span class="fw-name">RICFE&reg;</span></h3>
+                <p>Sistema profesional de prompting estrat&eacute;gico para comunicadores. Estructura las conversaciones con IA en 5 componentes: Rol, Instrucci&oacute;n, Contexto, Formato y Emoci&oacute;n/Meta.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#9733;</div>
+                <h3><span class="fw-name">ACA&trade;</span></h3>
+                <p>Autoridad y Credibilidad Algor&iacute;tmica. Marco para construir reputaci&oacute;n en entornos algor&iacute;tmicos, buscadores IA y motores de respuesta.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#9881;</div>
+                <h3><span class="fw-name">RRPP 6.0</span></h3>
+                <p>Visi&oacute;n renovada de las relaciones p&uacute;blicas donde la IA, la reputaci&oacute;n digital y la &eacute;tica se integran con el pensamiento narrativo y el liderazgo consciente.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#9998;</div>
+                <h3><span class="fw-name">HACERP&reg;</span></h3>
+                <p>Sistema educativo de aprendizaje aplicado y operativo para relaciones p&uacute;blicas. Dise&ntilde;ado para formaci&oacute;n universitaria y corporativa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEMAS PARA ENTREVISTAS -->
+<section>
+    <div class="container">
+        <p class="section-label">Temas disponibles</p>
+        <h2>Temas para entrevistas, charlas y paneles</h2>
+        <div class="cards cards-3">
+            <div class="card">
+                <div class="icon">&#129302;</div>
+                <h3>IA aplicada a comunicaci&oacute;n</h3>
+                <p>C&oacute;mo usar la inteligencia artificial de forma estrat&eacute;gica, &eacute;tica y profesional en RR.PP. y comunicaci&oacute;n corporativa.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#128200;</div>
+                <h3>Reputaci&oacute;n algor&iacute;tmica</h3>
+                <p>C&oacute;mo los buscadores IA y los motores de respuesta est&aacute;n redefiniendo la reputaci&oacute;n digital de personas y organizaciones.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#9878;</div>
+                <h3>&Eacute;tica en IA y comunicaci&oacute;n</h3>
+                <p>Gobernanza, transparencia y uso responsable de la IA en la creaci&oacute;n de contenidos y gesti&oacute;n de la informaci&oacute;n.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#128680;</div>
+                <h3>Gesti&oacute;n de crisis digital</h3>
+                <p>Protocolos, narrativas y herramientas para gestionar crisis reputacionales en entornos digitales e hiperinformados.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#127891;</div>
+                <h3>IA en la academia</h3>
+                <p>Integraci&oacute;n de la IA en la formaci&oacute;n de comunicadores y periodistas. Nuevas competencias para el profesional del futuro.</p>
+            </div>
+            <div class="card">
+                <div class="icon">&#127760;</div>
+                <h3>RRPP 6.0 y el futuro del sector</h3>
+                <p>C&oacute;mo las relaciones p&uacute;blicas est&aacute;n evolucionando con la IA, los datos y la autoridad algor&iacute;tmica.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APARICIONES EN MEDIOS -->
+<section>
+    <div class="container">
+        <p class="section-label">Apariciones en medios</p>
+        <h2>Medios donde ha sido citada o entrevistada</h2>
+        <ul class="media-list">
+            <li class="media-item">
+                <span class="media-outlet">El Universo</span>
+                <span class="media-topic">Columnista regular &mdash; IA, reputaci&oacute;n, comunicaci&oacute;n pol&iacute;tica, desinformaci&oacute;n</span>
+                <span class="media-type">Prensa</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Ecuavisa</span>
+                <span class="media-topic">An&aacute;lisis de crisis, comunicaci&oacute;n electoral, &eacute;tica en IA</span>
+                <span class="media-type">TV</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">TC Televisi&oacute;n</span>
+                <span class="media-topic">Tendencias digitales, reputaci&oacute;n online</span>
+                <span class="media-type">TV</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Teleamazonas</span>
+                <span class="media-topic">Comunicaci&oacute;n de crisis y gesti&oacute;n de marca</span>
+                <span class="media-type">TV</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Canal Uno</span>
+                <span class="media-topic">An&aacute;lisis de redes sociales y opini&oacute;n p&uacute;blica</span>
+                <span class="media-type">TV</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Primicias</span>
+                <span class="media-topic">Networking, LinkedIn, nomadismo digital</span>
+                <span class="media-type">Prensa</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Radio Centro</span>
+                <span class="media-topic">An&aacute;lisis pol&iacute;tico y comunicaci&oacute;n digital</span>
+                <span class="media-type">Radio</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Portal Innova</span>
+                <span class="media-topic">Top 5 expertas en RR.PP. en Latinoam&eacute;rica (2023)</span>
+                <span class="media-type">Prensa</span>
+            </li>
+            <li class="media-item">
+                <span class="media-outlet">Podcast de las RRPP</span>
+                <span class="media-topic">Serie propia sobre RR.PP., IA y comunicaci&oacute;n</span>
+                <span class="media-type">Podcast</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- FOTOS OFICIALES -->
+<section>
+    <div class="container">
+        <p class="section-label">Fotos oficiales</p>
+        <h2>Im&aacute;genes para uso editorial</h2>
+        <p style="margin-bottom:1.5rem; font-size:.9rem;">Las siguientes im&aacute;genes est&aacute;n disponibles para uso editorial con cr&eacute;dito: <em>&ldquo;Foto: archivo personal de Sonia Y&aacute;nez Blum&rdquo;</em></p>
+        <div class="photos-grid">
+            <div class="photo-card">
+                <img src="https://soniayanez.com/wp-content/uploads/2025/09/Sonia-Yanez-web-rrpp.png" alt="Sonia Yánez Blum - Retrato profesional" loading="lazy">
+                <div class="photo-label">Retrato profesional</div>
+            </div>
+            <div class="photo-card">
+                <img src="https://soniayanez.com/wp-content/uploads/2026/01/Sonia-Yanez-Blu-trabajo-remoto-e-IA-e1767701025606.png" alt="Sonia Yánez Blum - Trabajo remoto e IA" loading="lazy">
+                <div class="photo-label">Trabajo remoto e IA</div>
+            </div>
+            <div class="photo-card">
+                <img src="https://soniayanez.com/wp-content/uploads/2025/09/conferencia-e1767597234537.png" alt="Sonia Yánez Blum - En conferencia" loading="lazy">
+                <div class="photo-label">En conferencia</div>
+            </div>
+        </div>
+        <div class="download-row">
+            <a href="https://drive.google.com/drive/folders/1TU7Gv4QjZx5Y9LmNpKsRqWXl8oPzJyA" class="btn btn-outline" target="_blank" rel="noopener">Descargar recursos completos (Google Drive)</a>
+        </div>
+    </div>
+</section>
+
+<!-- LIBRO -->
+<section>
+    <div class="container">
+        <p class="section-label">Publicaci&oacute;n</p>
+        <h2>Manual Estrat&eacute;gico de IA &amp; Prompts para Comunicadores</h2>
+        <div class="bio-grid">
+            <div class="bio-photo">
+                <img src="https://soniayanez.com/wp-content/uploads/2025/11/Manual-Estrategico-IA-Prompts-RRPP-scaled.jpg" alt="Portada del Manual Estratégico de IA y Prompts" loading="lazy">
+            </div>
+            <div>
+                <p>El primer manual de IA aplicado espec&iacute;ficamente a la comunicaci&oacute;n y las RR.PP., con m&aacute;s de <strong>300 prompts estrat&eacute;gicos</strong> y el sistema profesional <strong>RICFE&reg;</strong>.</p>
+                <table class="data-table" style="margin-top:1rem;">
+                    <tr><td>Autora</td><td>Sonia Y&aacute;nez Blum</td></tr>
+                    <tr><td>Formato</td><td>eBook &middot; 122 p&aacute;ginas</td></tr>
+                    <tr><td>Idioma</td><td>Espa&ntilde;ol</td></tr>
+                    <tr><td>Publicaci&oacute;n</td><td>Noviembre 2025</td></tr>
+                    <tr><td>M&aacute;s info</td><td><a href="https://soniayanez.com/manual-estrategico-ia-y-prompts/">Ver p&aacute;gina del libro</a></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO PRENSA -->
+<section>
+    <div class="container">
+        <div class="cta-box">
+            <h2>Contacto para prensa y eventos</h2>
+            <p>Para entrevistas, participaci&oacute;n en eventos, comentarios de experta o colaboraciones editoriales.</p>
+            <div>
+                <a href="mailto:hola@soniayanez.com?subject=Prensa%20%7C%20Solicitud%20de%20entrevista" class="btn btn-white">hola@soniayanez.com</a>
+                <a href="https://soniayanez.com/contacto/" class="btn btn-outline" target="_blank" rel="noopener">Formulario de contacto</a>
+            </div>
+            <p style="margin-top:1.5rem; font-size:.85rem; color:rgba(255,255,255,.6);">Tiempo de respuesta: 24-48 horas h&aacute;biles</p>
+        </div>
+    </div>
+</section>
+
+<!-- REDES -->
+<section>
+    <div class="container">
+        <p class="section-label">Canales oficiales</p>
+        <div class="cards cards-3">
+            <a href="https://www.linkedin.com/in/soniayanezblum/" class="card" target="_blank" rel="noopener">
+                <h3>LinkedIn</h3>
+                <p>/in/soniayanezblum</p>
+            </a>
+            <a href="https://www.eluniverso.com/columnista/Sonia-Yanez-Blum/" class="card" target="_blank" rel="noopener">
+                <h3>El Universo</h3>
+                <p>Columna editorial</p>
+            </a>
+            <a href="https://open.spotify.com/show/2D0jFpibmkrCb40SV2sSPQ" class="card" target="_blank" rel="noopener">
+                <h3>Spotify</h3>
+                <p>Podcast de las RRPP</p>
+            </a>
+            <a href="https://blumdigitalpr.com/" class="card" target="_blank" rel="noopener">
+                <h3>Blum Digital PR</h3>
+                <p>Consultora</p>
+            </a>
+            <a href="https://academiaderelacionespublicas.com/" class="card" target="_blank" rel="noopener">
+                <h3>Academia de RRPP</h3>
+                <p>Formaci&oacute;n profesional</p>
+            </a>
+            <a href="https://x.com/SoniaYanezBlum" class="card" target="_blank" rel="noopener">
+                <h3>X (Twitter)</h3>
+                <p>@SoniaYanezBlum</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Sonia Y&aacute;nez Blum &middot; Todos los derechos reservados</p>
+        <p style="margin-top:.5rem;"><a href="https://soniayanez.com/politica-de-privacidad/">Pol&iacute;tica de privacidad</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

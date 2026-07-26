@@ -1,0 +1,66 @@
+============================================================
+COPY PARA EL HERO - HOME soniayanez.com
+Opcion B: Autoridad + Credibilidad
+============================================================
+
+TAGLINE (texto pequeno arriba):
+ESPECIALISTA EN REPUTACION DIGITAL E IA
+
+H1 (titulo principal):
+Que la IA hable bien de ti no es suerte. Es estrategia.
+
+SUBTITULO (debajo del H1):
+28 anos en comunicacion y RR.PP. Creadora de metodologias propias (RICFE, ACA). Ayudo a profesionales y organizaciones a ser visibles, creibles y relevantes en la era de la inteligencia artificial.
+
+BOTON 1 (principal):
+Agenda una consulta
+
+BOTON 2 (secundario):
+Descubre mis servicios
+
+============================================================
+QUE HACER CON "GOBERNANZA DE REPUTACION ALGORITMICA"
+============================================================
+
+NO eliminarlo, sino moverlo a una seccion mas abajo en el Home.
+Crear una seccion "Mi enfoque" o "Metodologia" donde se explique:
+
+Titulo de seccion:
+Gobernanza de Reputacion Algoritmica
+
+Texto explicativo:
+Las marcas, los lideres y las organizaciones ya estan siendo evaluados
+por sistemas de inteligencia artificial: buscadores, asistentes y motores
+de respuesta. La gobernanza de reputacion algoritmica es la disciplina
+que permite tomar el control de como la IA te interpreta, te presenta
+y te recomienda. Con el sistema ACA (Autoridad y Credibilidad Algoritmica)
+mido, analizo y optimizo esa presencia para que trabaje a tu favor.
+
+============================================================
+COMO APLICARLO EN ELEMENTOR
+============================================================
+
+1. Ve a WordPress > Paginas > Home > Editar con Elementor
+2. Haz clic en el widget de texto del tagline
+   - Cambia el texto a: ESPECIALISTA EN REPUTACION DIGITAL E IA
+   - Tamano: 13-14px, uppercase, letter-spacing: 0.12em
+   - Color: #4be4ff (si fondo oscuro) o #5a189a (si fondo claro)
+
+3. Haz clic en el H1
+   - Cambia a: Que la IA hable bien de ti no es suerte. Es estrategia.
+   - Tamano: 42-52px (desktop), 28-32px (movil)
+   - Font weight: 800
+   - Line-height: 1.1
+   - Color: #FFFFFF (si fondo oscuro) o #000000 (si fondo claro)
+
+4. Haz clic en el subtitulo
+   - Cambia al texto del subtitulo indicado arriba
+   - Tamano: 17-18px
+   - Line-height: 1.5
+   - Color: rgba(255,255,255,0.85) o #333333
+
+5. Botones CTA:
+   - Boton principal: fondo #5a189a, texto blanco, border-radius: 999px
+   - Boton secundario: borde #c15dca, texto #c15dca, fondo transparente
+
+6. Publicar
