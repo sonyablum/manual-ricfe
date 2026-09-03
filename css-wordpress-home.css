@@ -138,6 +138,33 @@ body:not(.elementor-section-dark) h2.elementor-heading-title,
     color: inherit !important;
 }
 
+/* --- FIX SECCION BIO "28 años construyendo reputacion" --- */
+/* La rejilla sy-bio-grid espera 2 columnas (foto 340px + texto),
+   pero la columna de la foto ya no existe en el HTML. El texto
+   queda apretado en 340px y el lado derecho en blanco.
+   Este fix convierte la seccion en una columna centrada y comoda. */
+#sonia .sy-bio-grid {
+    display: block !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+}
+
+#sonia .sy-bio-h {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem) !important;
+    line-height: 1.2 !important;
+}
+
+/* Las 3 fotos pequenas (conferencias/docencia/formacion) en fila */
+#sonia .sy-tray-strip {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 560px) {
+    #sonia .sy-tray-strip {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 767px) {
     h1.elementor-heading-title,
