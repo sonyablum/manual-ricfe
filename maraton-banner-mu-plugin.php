@@ -5,7 +5,9 @@
  *              Maratón de las Relaciones Públicas 2026 dentro de una tarjeta
  *              especial centrada (enlace a maratondelasrrpp.org) y corrige el
  *              espacio en blanco de la sección BIO "28 años...".
- * Version: 3.0
+ *              Además, en /rrpp-6-0/ marca el párrafo de la definición con la
+ *              clase .rrpp-definicion para que el speakable del schema funcione.
+ * Version: 3.1
  *
  * ════════════════════════════════════════════════════════════════════════
  *  PASO 1 — SUBE TU AFICHE A WORDPRESS
@@ -97,6 +99,44 @@ add_action('wp_footer', function () {
   if(!s)return;
   var ref=document.getElementById('investigacion')||document.getElementById('servicios');
   if(ref&&ref.parentNode){ref.parentNode.insertBefore(s,ref);}
+}());
+</script>
+    <?php
+});
+
+/* ────────────────────────────────────────────────────────────────────────
+ * 3) SPEAKABLE RRPP 6.0 — Solo en /rrpp-6-0/
+ *    El schema Person (snippet 22) declara speakable con cssSelector
+ *    ".rrpp-definicion". Como el post no trae esa clase, aquí se la añadimos
+ *    automáticamente al primer párrafo de la definición, sin editar el post.
+ * ──────────────────────────────────────────────────────────────────────── */
+function sy_is_rrpp6() {
+    if (function_exists('is_singular') && is_singular()) {
+        $slug = basename(untrailingslashit((string) get_permalink()));
+        if ($slug === 'rrpp-6-0') { return true; }
+    }
+    // Respaldo por URL, por si el permalink no resuelve en algún contexto.
+    $uri = isset($_SERVER['REQUEST_URI']) ? untrailingslashit($_SERVER['REQUEST_URI']) : '';
+    return (substr($uri, -9) === '/rrpp-6-0');
+}
+
+add_action('wp_footer', function () {
+    if (!sy_is_rrpp6()) { return; }
+    ?>
+<script>
+(function(){
+  // Si el contenido ya trae la clase (porque se pegó en el post), no hacer nada.
+  if(document.querySelector('.rrpp-definicion'))return;
+  var c=document.querySelector('.entry-content, article .entry-content, .post-content');
+  if(!c)return;
+  // Respaldo: marcar el párrafo de la definición ("RRPP 6.0 se define"/"es la").
+  var ps=c.querySelectorAll('p'), best=null;
+  for(var i=0;i<ps.length;i++){
+    var t=(ps[i].textContent||'').trim();
+    if(/^RRPP\s*6\.0\s+(se define|es)/i.test(t)){ best=ps[i]; break; }
+    if(!best && t.length>60) best=ps[i];
+  }
+  if(best) best.classList.add('rrpp-definicion');
 }());
 </script>
     <?php
