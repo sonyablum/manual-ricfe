@@ -37,20 +37,21 @@ Investigadora en reputación algorítmica y relaciones públicas</p>
 <!-- ── GRÁFICO: línea de tiempo de la evolución de las RR.PP. ── -->
 <figure class="rrpp-timeline" aria-label="Línea de tiempo de la evolución de las relaciones públicas, de las RR.PP. clásicas a RRPP 6.0" style="margin:32px 0;padding:0;">
   <style>
-    .rrpp-timeline *{box-sizing:border-box}
+    /* Paleta oficial Sonia Yánez Blum: brand #5A189A · lavender #B28BE4 · cyan #4BE4FF · Montserrat */
+    .rrpp-timeline *{box-sizing:border-box;font-family:'Montserrat',system-ui,sans-serif}
     .rrpp-tl-track{display:flex;gap:0;overflow-x:auto;padding:8px 4px 16px}
     .rrpp-tl-step{flex:1 0 128px;min-width:128px;position:relative;padding:26px 12px 0;text-align:center}
-    .rrpp-tl-step::before{content:"";position:absolute;top:9px;left:0;right:0;height:3px;background:#e6ddf5}
+    .rrpp-tl-step::before{content:"";position:absolute;top:9px;left:0;right:0;height:3px;background:#ece3f7}
     .rrpp-tl-step:first-child::before{left:50%}
     .rrpp-tl-step:last-child::before{right:50%}
-    .rrpp-tl-dot{position:absolute;top:3px;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:#c9b8e8;border:3px solid #fff;box-shadow:0 0 0 2px #c9b8e8}
-    .rrpp-tl-year{font-size:.72rem;font-weight:700;color:#7c3aed;letter-spacing:.02em}
-    .rrpp-tl-name{font-size:.82rem;font-weight:800;color:#2d1060;margin:2px 0 4px}
+    .rrpp-tl-dot{position:absolute;top:3px;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:#B28BE4;border:3px solid #fff;box-shadow:0 0 0 2px #B28BE4}
+    .rrpp-tl-year{font-size:.72rem;font-weight:700;color:#5A189A;letter-spacing:.02em}
+    .rrpp-tl-name{font-size:.82rem;font-weight:700;color:#2a0f47;margin:2px 0 4px}
     .rrpp-tl-desc{font-size:.7rem;line-height:1.35;color:#5a5670}
-    .rrpp-tl-step.is-now .rrpp-tl-dot{background:#7c3aed;box-shadow:0 0 0 2px #7c3aed,0 0 0 6px rgba(124,58,237,.18)}
-    .rrpp-tl-step.is-now::before{background:linear-gradient(90deg,#e6ddf5,#7c3aed)}
-    .rrpp-tl-step.is-now .rrpp-tl-name{color:#7c3aed}
-    .rrpp-timeline figcaption{font-size:.72rem;color:#6b7280;margin-top:8px;text-align:center}
+    .rrpp-tl-step.is-now .rrpp-tl-dot{background:#5A189A;border-color:#fff;box-shadow:0 0 0 2px #5A189A,0 0 0 6px rgba(75,228,255,.35)}
+    .rrpp-tl-step.is-now::before{background:linear-gradient(90deg,#ece3f7,#5A189A)}
+    .rrpp-tl-step.is-now .rrpp-tl-name{color:#5A189A}
+    .rrpp-timeline figcaption{font-size:.72rem;color:#6b7280;margin-top:8px;text-align:center;font-family:'Montserrat',system-ui,sans-serif}
   </style>
   <div class="rrpp-tl-track">
     <div class="rrpp-tl-step"><span class="rrpp-tl-dot"></span><div class="rrpp-tl-year">1940–1980</div><div class="rrpp-tl-name">RR.PP. clásicas</div><div class="rrpp-tl-desc">Prensa, radio y TV; comunicación unidireccional</div></div>
